@@ -8,7 +8,8 @@ def consultar_sintegra(cnpj):
     with sync_playwright() as p:
 
         browser = p.chromium.launch(
-            headless=True
+            headless=True,
+            args=["--no-sandbox", "--disable-dev-shm-usage"]
         )
 
         page = browser.new_page()
